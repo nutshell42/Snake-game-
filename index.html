@@ -22,7 +22,7 @@
 
             const GRID_SIZE = 20;
             const SNAKE_SIZE = 20;
-            const SNAKE_SPEED = 1; // Adjusted speed
+            const SNAKE_SPEED = 150; // Adjusted speed (milliseconds)
 
             let snake = [{ x: canvas.width / 2, y: canvas.height / 2 }];
             let snakeDirection = { x: 0, y: 0 };
@@ -133,10 +133,9 @@
 
             function gameLoop() {
                 update();
-                requestAnimationFrame(gameLoop);
             }
 
-            gameLoop();
+            setInterval(gameLoop, SNAKE_SPEED);
         });
     </script>
 </body>
